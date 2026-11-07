@@ -1,0 +1,20 @@
+# macOS
+.DS_Store
+__MACOSX/
+._*
+
+# Xcode
+*.xcodeproj/
+*.xcworkspace/
+xcuserdata/
+DerivedData/
+*.xcuserstate
+
+# C/C++ generated files
+*.o
+*.obj
+*.out
+*.exe
+*.dSYM/
+build/
+cmake-build-*/
