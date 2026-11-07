@@ -1,0 +1,145 @@
+---
+title: "Stats 20, F23 -- Homework 6"
+author: "Aashna Sibal"
+date: "11/29/2023"
+output:
+  html_document:
+    toc: yes            # creates table of contents
+    toc_depth: 4        # toc will include headers <= ####
+    toc_float: yes      # toc always on left of page
+    code_folding: show  # allows hiding of code
+---
+
+## Question 1
+
+### (a)
+
+```{r Question 1a}
+reading_ease <- function(x) {
+  if (length(x) > 1) {
+    sentences <- paste(unlist(x), collapse = " ")
+  } else {
+    sentences <- paste(x, collapse = " ")
+  }
+  sentences <- strsplit(sentences, split = "[.!?:;]")[[1]]
+  sentences <- tolower(sentences)
+  sentences <- gsub(pattern = "[[:punct:]]", replacement = "", sentences)
+  
+  words <- strsplit(sentences, split = " ")
+  
+  keep <- function(w) {
+    w[nchar(w) > 0]
+  }
+  
+  words <- lapply(words, keep)
+  ASL = length(unlist(words))/length(unlist(sentences))
+
+  is_special_ending <- function(ending) {
+    is_es <- all(ending == c("e","s"))
+    is_ed <- all(ending == c("e","d"))
+    is_e_not_le <- ending[2] == "e" & ending[1] != "l"
+    is_es | is_ed | is_e_not_le
+  }
+  
+  rm_special_endings <- function(word_letters) {
+    word_tail <- tail(word_letters, n = 2)
+    if (is_special_ending(word_tail)) {
+      if (word_tail[2] == "e") {
+        word_letters[-length(word_letters)]
+      } else {
+        head(word_letters, n = -2)
+      }
+    } else {
+      word_letters
+    }
+  }
+ 
+  is_vowel <- function(letter) {
+    letter %in% c("a", "e", "i", "o", "u", "y")
+  }
+  
+  count_syl <- function(word) {
+    word_letters <- unlist(strsplit(word,split = ""))
+    if (length(word_letters) <= 3) {
+      1
+    } else {
+      word_letters <- rm_special_endings(word_letters)
+      word_vowels <- is_vowel(word_letters)
+      sum(word_vowels) - sum(diff(which(word_vowels)) == 1)
+    }
+  }
+  
+  syllables = sum(unlist(lapply(unlist(words),count_syl)))
+
+  ASW = syllables/length(unlist(words))
+  
+  206.835 - (1.015 * ASL) - (84.6 * ASW)
+}
+
+```
+
+### (b)
+
+```{r Question 1b}
+waffles_vec <- c("We need to remember what's important in life: friends, waffles, work.",
+                 "Or waffles, friends, work.", 
+                 "Doesn't matter, but work is third.")
+reading_ease(waffles_vec)
+```
+
+## Question 2
+
+```{r Question 2}
+my_nchar <- function(x) {
+  chars = c()
+  index = 1
+  for (i in x) {
+    chars[index] <- length(unlist(strsplit(i, split = "")))
+    index <- index + 1
+  }
+  chars
+}
+```
+
+## Question 3
+
+```{r Question 3}
+my_strrep <- function(x,times)  {
+  output <- rep(x,times)
+  paste(output,sep = "",collapse="")
+}
+```
+
+## Question 4
+
+```{r Question 4}
+`%is_in%` <- function(x, table) {
+  index <- 1  
+  result <- c() 
+  for (i in x) {
+    result[index] <- (any(table == i))
+    index <- index + 1
+  }
+  result
+}
+
+```
+
+## Question 5
+
+```{r Question 5}
+my_gregexpr <- function(pattern,text) {
+  length <- nchar(pattern)
+  chars <- unlist(strsplit(text,split = ""))
+  output <- as.list(rep(-1, length(chars)))
+  for (i in seq_along(chars)) {
+    substring <- paste(chars[i:(i + length - 1)],collapse = "")
+    if (substring == pattern) {
+      output[[i]] <- i
+    }
+    
+  }
+  output
+}
+```
+
