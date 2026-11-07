@@ -1,0 +1,292 @@
+---
+title: "Stats 20, F23 -- Homework 4"
+author: "Aashna Sibal"
+date: "11/07/2023"
+output:
+  html_document:
+    toc: yes            # creates table of contents
+    toc_depth: 4        # toc will include headers <= ####
+    toc_float: yes      # toc always on left of page
+    code_folding: show  # allows hiding of code
+---
+
+## Question 1
+
+```{r Question 1}
+my_t <- function(x) {
+  new_matrix <- matrix(nrow = ncol(x), ncol = nrow(x))
+  for (i in 1:nrow(x)) {
+    for (j in 1:ncol(x)) {
+      new_matrix[j,i] <- x[i,j]
+    }
+  }
+  new_matrix
+}
+
+```
+.
+
+## Question 2
+
+### (a)
+```{r Question 2a}
+my_cor <- function(x, y, use = "everything") {
+  xbar <- mean(x)
+  ybar <- mean(y)
+  diffx <- x-xbar
+  diffy <- y-ybar
+  diffx_2 <- (x-xbar)^2
+  diffy_2 <- (y-ybar)^2
+  
+#  if (use == "everything") {
+#    sum(diffx * diffy) / (sqrt(sum(diffx_2)) * sqrt(sum(diffy_2)))
+#  }
+  
+  if (use == "pairwise.complete.obs") {
+    x = x[!is.na(x) & !is.na(y)]
+    y = y[!is.na(x) & !is.na(y)]
+    
+  }
+  
+  sum(diffx * diffy) / (sqrt(sum(diffx_2)) * sqrt(sum(diffy_2)))
+  
+}
+```
+
+
+```{r}
+x <- c(1, 2, 3, 4, 5)
+y <- c(2, 3, 4, 5, 6)
+test <- my_cor(x,y,use = "pairwise.complete.obs")
+test
+real <- cor(x,y,use = "pairwise.complete.obs")
+real
+```
+
+### (b)
+```{r Question 2b}
+linreg <- function(x,y,use = "everything"){
+  
+  if (use == "pairwise.complete.obs") {
+    x <- x[!is.na(x) & !is.na(y)]
+    y <- y[!is.na(x) & !is.na(y)]
+  }
+  
+  b = my_cor(x,y) * (sd(y) / sd(x))
+  a = mean(y) - (b * mean(x))
+  c(a,b)
+}
+```
+
+### (c)
+```{r Question 2c}
+height <- c(61,62,63,64,66,68)
+weight <- c(104,110,125,141,160,170)
+linreg(height,weight)
+```
+The equation would be y = -510.64706 + 10.08824x
+
+### (d)
+```{r Question 2d}
+linreg_mat <- function(x,y) {
+  if (length(x) != length(y)){
+    stop("Vector arguments must be of same length.")
+  }
+  X = matrix(data = c(rep(1,length(x)), x), nrow = length(x),ncol = 2)
+  Xt <- my_t(X)
+  ((Xt %*% X)^-1) %*% Xt %*% y
+  solve
+  # figure out hint 3
+}
+```
+
+### (e)
+```{r Question 2e}
+linreg_mat(height,weight)
+```
+My answers are very different from those in part (c), -510 vs 270 and 10 vs 4.
+
+### (f)
+
+The slope coefficient means that for every unit change in our independent variable (x), height, we predict a 4.22 unit increase in weight.
+
+## Question 3
+
+### (a)
+```{r Question 3a}
+`%m%` <- function(A,B) {
+  m = nrow(A)
+  n = ncol(A)
+  p = ncol(B)
+  
+  C = matrix(0, ncol = p, nrow = m)
+  if (ncol(A) == nrow(B)) {
+    for (i in 1:m){
+      for (j in 1:p){
+        for (k in 1:n) {
+          C[i,j] <- C[i,j] + (A[i, k] * B[k, j])
+        }
+      }
+    }
+    C
+  }
+  else {
+    stop("Matrix arguments are not conformable.")
+  }
+}
+```
+
+### (b)
+```{r Question 3b}
+X <- matrix(c(6,3,5,2,4,1), nrow = 2, ncol = 3)
+Y <- matrix(c(1:9), nrow = 3, ncol = 3)
+mine <- X %m% Y
+built <- X %*% Y
+mine
+built
+```
+
+## Question 4
+
+### (a)
+```{r Question 4a}
+`%^%` <- function(A,k) {
+  result = A
+  num = 1
+  while (num < k) {
+    result = result %m% A
+    num = num + 1 
+  }
+  result
+}
+
+```
+
+### (b)
+```{r Question 4b}
+Z <- matrix(c(0.2,0.6,0.4,0.7,0.2,0.1,0.1,0.2,0.5), nrow = 3, ncol = 3)
+Z %^% 0
+Z %^% 5
+Z %^% 50
+Z %^% 500
+```
+
+## Question 5
+
+```{r Question 5}
+my_which <- function(x, arr.ind = FALSE) {
+  if (arr.ind) {
+    ind1 = 1
+    result = matrix(nrow = sum(x), ncol = 2)
+    for (i in 1:nrow(x)){
+      for (j in 1:ncol(x)){
+        if (x[i,j]) {
+          result[ind1, 1] <- i
+          result[ind1, 2] <- j
+          ind1 = ind1 + 1
+        }
+      }
+    }
+  } else {
+    index = 1
+    result = c()
+    for (i in seq_along(x)) {
+      if (x[i]) {
+        result[index] <- i
+        index = index + 1
+      }
+    }
+  }
+  result
+}
+```
+
+## Question 6
+```{r Question 6}
+load("mlb.RData")
+```
+### (a)
+#### (i)
+```{r Question 6ai}
+load("mlb.RData")
+tapply(hit, team, max)
+```
+
+#### (ii)
+```{r Question 6aii}
+tapply(hit, team, length)
+```
+
+#### (iii)
+```{r Question 6aiii}
+tapply(hr>0, team, sum)
+```
+
+### (b)
+#### (i)
+```{r Question 6bi}
+tapply(hit[ab >100]/ab[ab>100], team[ab > 100], max)
+```
+
+#### (ii)
+```{r Question 6bii}
+tapply(hit, team, sum) / tapply(ab, team, sum)
+```
+
+### (c)
+```{r Question 6c}
+tapply(hr, list(pos,league), mean)
+```
+
+Rightfield has the biggest difference between leagues.
+
+### (d)
+```{r Question 6d}
+median(tapply(hr, list(pos,team), length))
+```
+
+
+## Question 7
+
+### (a)
+```{r Question 7a}
+my_row <- function(x) {
+    output <- matrix(nrow = nrow(x), ncol = ncol(x))
+    for (i in 1:nrow(x)){
+      for (j in 1:ncol(x)){
+        output[i,j] <- i
+      }
+    }
+    output
+}
+```
+
+### (b)
+```{r Question 7b}
+my_col <- function(x) {
+    output <- matrix(nrow = nrow(x), ncol = ncol(x))
+    for (i in 1:nrow(x)){
+      for (j in 1:ncol(x)){
+        output[i,j] <- j
+      }
+    }
+    output
+}
+
+my_row(Z) == my_col(Z)
+```
+
+### (c)
+```{r Question 7c}
+my_diag <- function(x,nrow = nrow(x),ncol = nrow(x)) {
+  output = c(sum((my_row(x) == my_col(x))))
+  index = 1
+  for (i in 1:nrow(x)) {
+    if (my_row(x) == my_col(x)){
+      output[index] <- x[i,i]
+      index = index + 1
+    }
+  }
+  output
+}
+```

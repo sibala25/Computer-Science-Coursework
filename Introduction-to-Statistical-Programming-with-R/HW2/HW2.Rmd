@@ -1,0 +1,262 @@
+---
+title: "Stats 20, F23 -- Homework 2"
+author: "Aashna Sibal"
+date: "10/17/2023"
+output:
+  html_document:
+    toc: yes            # creates table of contents
+    toc_depth: 4        # toc will include headers <= ####
+    toc_float: yes      # toc always on left of page
+    code_folding: show  # allows hiding of code
+---
+
+## Question 1
+
+```{r Question 1 Background}
+mixed1 <- c(TRUE, FALSE, FALSE, TRUE, 4, 0, 3)
+mixed1
+mixed2 <- c(TRUE, FALSE, FALSE, TRUE, 4, 0, "3")
+mixed2
+mixed3 <- c(c(TRUE, FALSE, FALSE, TRUE, 4, 0), "3")
+mixed3
+```
+
+
+### (a)
+
+<!-- ENTER YOUR ANSWER BELOW -->
+Mixed2 is a vector with one character, and since characters are the highest in the mode hierarchy, mixed2 produces all characters in the output. In mixed3, there is a vector inside a vector with a character, and the inner one's highest mode is numeric, so all the logical values get turned into numbers. Then the outer vector has a character so all the numerics become characters, producing an output of characters that are all numbers.
+
+
+### (b)
+
+<!-- ENTER YOUR ANSWER BELOW, IT CAN BE JUST THE COMMAND. NO NEED TO STORE AN OBJECT -->
+```{r Question 1b}
+c(TRUE, FALSE, c(FALSE, TRUE, 4, 0), "3")
+```
+
+
+## Question 2
+
+
+### (a)
+
+
+<!-- ENTER YOUR ANSWER BELOW -->
+```{r}
+as.numeric(mixed2)
+as.numeric(mixed3)
+```
+In mixed2, the values are all characters, as we saw in question one. Therefore, R does not know what to convert them to as numerics, because the logical factor is not present. It just says the words TRUE and FALSE rather than being of the logical type, so R cannot recognize them. With mixed 3, R sees all number characters can easily convert them into numeric types.
+
+
+### (b)
+<!-- ENTER YOUR ANSWER BELOW -->
+```{r Question 2b}
+as.logical(mixed2)
+as.logical(mixed3)
+```
+In mixed2, R can tell from the characters "TRUE" or "FALSE" what the logical values can be. Since there are numbers, R designates those NA values. For mixed3, there is no logical value tied to these all numeric and then all character values, so R does not know how to make them logical types. 
+
+
+### (c)
+<!-- ENTER YOUR ANSWER BELOW, IT CAN BE JUST THE COMMAND. NO NEED TO STORE AN OBJECT -->
+```{r Question 2c}
+as.logical(as.numeric(mixed3))
+```
+
+
+## Question 3
+
+
+### (a)
+
+
+<!-- ENTER YOUR ANSWERS BELOW, THEY CAN BE JUST THE COMMANDs. NO NEED TO STORE OBJECTs -->
+```{r Question 3a}
+seq(1,25)
+1:25
+seq_len(25)
+seq_along(seq(1,25))
+```
+
+
+### (b)
+<!-- ENTER YOUR ANSWERS BELOW, THEY CAN BE JUST THE COMMANDs. NO NEED TO STORE OBJECTs -->
+```{r Question 3b}
+seq(8, 2, by = -.5)
+rep(seq(-1, 5, length = 4),5)
+rep(seq(5, 1, by = -1),5)
+rep(seq(5, 1, by = -1),(rep(5,5)))
+rep(seq(10, 6, by = -1),(seq(1,5)))
+```
+
+### (c)
+<!-- ENTER YOUR ANSWER BELOW -->
+This cannot be created with only seq() and rep() since it is not a consistent repetition of the same sequence or numbers. Each chunk is a different set of five numbers and unlike the patterns in b, there is a decrement involved in the WHOLE chunk in each step. 
+<!-- USE THE CODE CHUNK BELOW IF YOU'D LIKE -->
+```{r Question 3c}
+rep(seq(10,6),5) - rep(seq(0, 4),(rep(5,5)))
+```
+
+
+## Question 4
+<!-- USE THE CODE CHUNK BELOW -->
+```{r Question 4a}
+k <- 0:100
+sin(k * pi)
+```
+<!-- ENTER YOUR EXPLANATION BELOW -->
+No, mathematically I would expect to see mainly 0s and 1s, since that is what the since of multiples of pi is.
+
+## Question 5
+
+### (a)
+
+
+<!-- CREATE THE FUNCTION IN THE CODE CHUNK BELOW -->
+<!-- NAME THE FUNCTION AND ITS INPUTS EXACTLY AS STATED IN THE ASSIGNENT -->
+```{r Question 5a}
+my_skew <- function(x) {
+  
+  (sqrt(length(x)) * sum((x - mean(x))^3)) / (sum((x - mean(x))^2)) ^ (3/2)
+}
+```
+
+
+### (b)
+
+
+<!-- USE THE CODE CHUNK BELOW -->
+```{r Question 5b}
+running_times <- c(51, 40, 57, 34, 47, 50, 50, 56, 41, 38)
+my_skew(running_times)
+```
+This value means that the running times distribution is slightly skewed to the left, or has a tail on the left end.
+
+### (c)
+<!-- CREATE THE FUNCTION IN THE CODE CHUNK BELOW -->
+<!-- NAME THE FUNCTION AND ITS INPUTS EXACTLY AS STATED IN THE ASSIGNENT -->
+```{r Question 5c}
+my_skew_one <- function(x) {
+  n <- length(x)
+  x_bar <- mean(x)
+  
+  (sqrt(n) * (sum(x^3) - 3*x_bar*sum(x^2) + 2*n*(x_bar^3))) / ((sum(x^2) - n*(x_bar^2))^(3/2))
+}
+```
+
+### (d)
+<!-- USE THE CODE CHUNK BELOW -->
+```{r Question 5d}
+new <- running_times*1e10
+my_skew_one(new)
+```
+<!-- ENTER YOUR EXPLANATION BELOW -->
+I got the same exact value in b and d. I think this is correct because all we did was algebraically manipulate the equation, in the end it is still calculating the same value. Also, we are multiplying ALL the values by the same number, so the skew is the same.
+
+### (e)
+<!-- USE THE CODE CHUNK BELOW IF YOU'D LIKE -->
+```{r Question 5e}
+my_skew(running_times) - my_skew_one(running_times)
+```
+
+<!-- ENTER YOUR ANSWER BELOW -->
+This happens due to rounding errors. When there are very large values and one-pass functions, the inner terms being subtracted from each other lose a lot of precision. Because of this loss of precision, there are minimal tiny differences between the two-pass function result and that of the one-pas function.
+
+## Question 6
+
+### (a)
+<!-- CREATE THE FUNCTION IN THE CODE CHUNK BELOW -->
+<!-- NAME THE FUNCTION AND ITS INPUTS EXACTLY AS STATED IN THE ASSIGNENT -->
+```{r Question 6a}
+my_length <- function(x) {
+  max(seq_along(x),0)
+}
+```
+
+### (b)
+<!-- USE THE CODE CHUNK BELOW -->
+```{r Question 6b}
+my_length(numeric(0))
+my_length(seq(1, 99, by = 2))
+my_length(c("waffles", "friends", "work"))
+```
+
+## Question 7
+
+### (a)
+<!-- CREATE THE FUNCTION IN THE CODE CHUNK BELOW -->
+<!-- NAME THE FUNCTION AND ITS INPUTS EXACTLY AS STATED IN THE ASSIGNENT -->
+```{r Question 7a}
+my_rev <- function(x) {
+  x[(length(x):1) * (length(x) >= 1)]
+}
+```
+
+### (b)
+<!-- USE THE CODE CHUNK BELOW -->
+```{r Question 7b}
+my_rev(numeric(0))
+my_rev(seq(1, 99, by = 2))
+my_rev(c("waffles", "friends", "work"))
+```
+
+## Question 8
+
+### (a)
+<!-- CREATE THE FUNCTION IN THE CODE CHUNK BELOW -->
+<!-- NAME THE FUNCTION AND ITS INPUTS EXACTLY AS STATED IN THE ASSIGNENT -->
+```{r Question 8a}
+front <- function(x, n) {
+  x[1:min(length(x),n) * (length(x) >= 1)]
+}
+front(numeric(0),6)
+front(seq(1, 99, by = 2),6)
+front(seq(1,5),6)
+front(c("waffles", "friends", "work"),6)
+```
+
+### (b)
+<!-- CREATE THE FUNCTION IN THE CODE CHUNK BELOW -->
+<!-- NAME THE FUNCTION AND ITS INPUTS EXACTLY AS STATED IN THE ASSIGNENT -->
+```{r Question 8b}
+back <- function(x, n) {
+  x[length(x):max(1,(length(x) - n + 1)) * (length(x) >= 1)]
+}
+
+back(numeric(0),6)
+back(seq(1, 99, by = 2),6)
+back(c("waffles", "friends", "work"),6)
+```
+
+### (c)
+<!-- CREATE THE FUNCTION IN THE CODE CHUNK BELOW -->
+<!-- NAME THE FUNCTION AND ITS INPUTS EXACTLY AS STATED IN THE ASSIGNENT -->
+```{r Question 8c}
+insert_at <- function(x, values, at) {
+  beginning <- front(x,at-1)
+  reverse_end <- back(x,length(x) - at +1)
+  ending <- back(reverse_end, length(reverse_end))
+  new_vec <- c(beginning, values, ending)
+  new_vec
+}
+
+
+```
+
+### (d)
+<!-- USE THE CODE CHUNK BELOW -->
+```{r Question 8d}
+insert_at(1:5, c(0, 0, 0), at = 1)
+
+insert_at(1:5, c(0, 0, 0), at = 3)
+
+insert_at(1:5, c(0, 0, 0), at = 5)
+
+insert_at(1:5, c(0, 0, 0), at = 6)
+```
+
+
+
+

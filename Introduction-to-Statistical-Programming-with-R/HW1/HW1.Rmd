@@ -1,0 +1,309 @@
+---
+title: "Stats 20, 2023 Spring -- Homework 1"
+author: "Aashna Sibal"
+date: "10/09/2023"
+output:
+  html_document:
+    toc: yes            # creates table of contents
+    toc_depth: 4        # toc will include headers <= ####
+    toc_float: yes      # toc always on left of page
+    code_folding: show  # allows hiding of code
+---
+
+## Question 1
+
+### (a)
+<!-- ENTER YOUR ANSWER BELOW -->
+**Sometimes you have to make the hardest climb to see the most beautiful sunrise.** I read that once on an old lady’s decorative pillow, but it is really how I feel today. I’ve climbed a very weird and rocky mountain, and it was a pain in the ass, and my legs are tired, and I’m starving. But *the sun is rising over a sea of love and waffles and possibility. So I’m just gonna relax and take a deep breath and enjoy this view for as long as I possibly can*.” – Leslie Knope (from ***Parks and Recreation***)
+
+### (b)
+<!-- ENTER YOUR ANSWER BELOW -->
+
+|Homework | Midterm | Final Exam | Final Project|
+|  -:     |     -:  |     -:     |     -:       |
+|  18%    |     30% |     40%    |    12%       |
+
+### (c)
+<!-- ENTER YOUR ANSWER BELOW -->
+- 2021-2022
+    + Fall
+        * Chem 14A
+        * LS 7A
+        * Asia Am 20
+    + Winter
+        * Poli Sci 40
+        * PIC 10A
+        * A&O Sci 2
+    + Spring
+        * Comm 10
+        * Soc 1
+        * Psych 10
+        * Neurosc 17
+- 2022-2023
+    + Fall
+        * Comm 1
+        * Comm 173
+        * Comm 187
+        * PIC 16A
+    + Winter
+        * Engl 90
+        * Psych 100A
+        * Psych 195B
+    + Spring
+        * Anthro 4
+        * Art Hist 31
+        * Comm 188C
+        * Psych 85
+
+### (d)
+<!-- ENTER YOUR ANSWER BELOW -->
+![Sample kitten from: https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.petage.com%2Fkitten-care-101%2F&psig=AOvVaw07EVx9Vo03mygz4lP92a5c&ust=1696985989371000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCKiY4sqj6oEDFQAAAAAdAAAAABAD](kitten.jpeg)
+
+## Question 2
+
+### (a)
+<!-- ENTER YOUR ANSWER BELOW -->
+These videos are relevant to my time in this class because just like in the videos, I might have different ways of interpreting or learning something than other students in the course. Regardless, that just means you have to be as detailed as possible. Also, this explains the importance of being detailed in code explanations, because professors and the TA cannot just read your mind and tell what your thought process was. 
+
+### (b)
+<!-- ENTER YOUR ANSWER BELOW -->
+1. Spread thin layer of butter on outsides of two pieces of bread. 
+2. Put a slice of cheese on one of the insides of the bread then put the other piece of bread on top of the cheese with the inside facing the cheese.
+3. Heat up pan with 1 oz of butter on it.
+4. Put sandwich on pan and heat up for 2-3 minutes, then flip and cook till cheese is melted to your preference.
+
+## Question 3
+
+### (a)
+<!-- COMPUTE THE QUANTITIES IN THE CODE CHUNK BELOW -->
+```{r Question 3a}
+(6^8) / (16^5)
+101^(-8/7)
+8 + (3 * pi) - 3 + ((4 / 2) * -1)
+```
+
+(i) <!-- ENTER YOUR ANSWER TO THE RIGHT OF THIS OR BELOW -->
+1.601807
+(ii) <!-- ENTER YOUR ANSWER TO THE RIGHT OF THIS OR BELOW -->
+0.005120908
+(iii) <!-- ENTER YOUR ANSWER TO THE RIGHT OF THIS OR BELOW -->
+12.42478
+
+### (b)
+<!-- COMPUTE THE QUANTITIES IN THE CODE CHUNK BELOW -->
+```{r Question 3b}
+log(54, base = 3)
+
+exp(exp((sqrt(2))))
+
+(exp(pi) + exp(-pi)) / 2
+```
+
+(i) <!-- ENTER YOUR ANSWER TO THE RIGHT OF THIS OR BELOW -->
+3.63093
+(ii) <!-- ENTER YOUR ANSWER TO THE RIGHT OF THIS OR BELOW -->
+61.14514
+(iii) <!-- ENTER YOUR ANSWER TO THE RIGHT OF THIS OR BELOW -->
+11.59195
+
+### (c)
+<!-- COMPUTE THE QUANTITIES IN THE CODE CHUNK BELOW -->
+```{r Question 3c}
+119 %% 25
+
+119 %/% 25
+```
+
+(i) <!-- ENTER YOUR ANSWER TO THE RIGHT OF THIS OR BELOW -->
+19
+(ii) <!-- ENTER YOUR ANSWER TO THE RIGHT OF THIS OR BELOW -->
+4
+
+## Question 4
+
+### (a)
+<!-- CREATE THE OBJECTS IN THE CODE CHUNK BELOW -->
+<!-- NAME THE OBJECTS EXACTLY AS STATED IN THE ASSIGNMENT -->
+```{r Question 4a}
+vol_1 <- (4/3) * pi * (1^3)
+vol_4 <- (4/3) * pi * (4^3)
+```
+
+(i) <!-- ENTER YOUR ANSWER TO THE RIGHT OF THIS OR BELOW -->
+4.18879
+(ii) <!-- ENTER YOUR ANSWER TO THE RIGHT OF THIS OR BELOW -->
+268.0826
+
+### (b)
+<!-- CREATE THE FUNCTION IN THE CODE CHUNK BELOW -->
+<!-- NAME THE FUNCTION AND ITS INPUTS EXACTLY AS STATED IN THE ASSIGNENT -->
+```{r Question 4b}
+vol_sphere <- function(r = 1) {
+  (4/3) * pi * (r^3)  
+  
+}
+```
+
+### (c)
+<!-- USE THE CODE CHUNK BELOW -->
+```{r Question 4c}
+vol_sphere()
+
+vol_sphere(r = 4)
+
+```
+
+(i) <!-- ENTER YOUR ANSWER TO THE RIGHT OF THIS OR BELOW -->
+4.18879
+(ii) <!-- ENTER YOUR ANSWER TO THE RIGHT OF THIS OR BELOW -->
+268.0826
+
+## Question 5
+
+### (a)
+<!-- CREATE THE FUNCTION IN THE CODE CHUNK BELOW -->
+<!-- NAME THE FUNCTION AND ITS INPUTS EXACTLY AS STATED IN THE ASSIGNENT -->
+```{r Question 5a}
+z_prop <- function(x, n, p0) {
+  ((x / n) - p0) / sqrt((p0 * (1 - p0)) / n)
+  
+}
+
+# p hat would be x/n here, since it is the proportion of successes out of all the trials, or sample proportion
+```
+
+### (b)
+<!-- USE THE CODE CHUNK BELOW -->
+```{r Question 5b}
+z_prop(x = 10, n = 13, p0 = 0.6)
+```
+
+### (c)
+<!-- ENTER YOUR ANSWER BELOW -->
+A z-statistic of 1.245505 means that the sample that was observed is 1.245505 standard deviations above the mean.
+
+### (d)
+<!-- USE THE CODE CHUNK BELOW -->
+```{r Question 5d}
+z_prop(x = 30, n = 39, p0 = 0.6)
+```
+<!-- ENTER YOUR EXPLANATION BELOW -->
+The z-statistic changes because although x/n, or the sample proportion or p hat, is still the same, the value of n in the denominator has changed. Because the n is in the denominator of the denominator, a higher value for n means a higher overall z-statistic.
+
+## Question 6
+
+### (a)
+<!-- CREATE THE FUNCTION IN THE CODE CHUNK BELOW -->
+<!-- NAME THE FUNCTION AND ITS INPUTS EXACTLY AS STATED IN THE ASSIGNENT -->
+```{r Question 6a}
+lease_calc <- function(msrp,
+                       price,
+                       down,
+                       n = 36,
+                       res = 0.60,
+                       mf = 0.001,
+                       tax = 0.095) {
+  capitalized_cost <- price - down
+  residual_value <- msrp * res
+  monthly_depreciation <- (capitalized_cost - residual_value) / n
+  monthly_finance_charge <- (capitalized_cost + residual_value) * mf
+  sub_total <- monthly_depreciation + monthly_finance_charge
+  sub_total + tax
+}
+```
+
+### (b)
+<!-- USE THE CODE CHUNK BELOW -->
+```{r Question 6b}
+lease_calc(msrp = 31495,
+           price = 29895,
+           down = 2500,
+           res = 0.52,
+           mf = 0.0016) 
+```
+
+## Question 7
+
+### (a)
+<!-- ENTER YOUR ANSWER BELOW -->
+5 coins: 1 quarter, 2 dimes, 2 pennies
+
+I went in order from biggest to smallest coin (quarter, dime, nickel, penny) and calculated the largest number of that coin that could make up my current cents without going over. Starting with 47 cents, that would be one quarter, leaving me with 22 cents. 22 cents would be two dimes and 2 cents left over, which can only be two pennies.
+
+### (b)
+<!-- ENTER YOUR ANSWER BELOW -->
+1. Integer division with starting cents and 25 cents, if starting cents is greater than 24. If not, skip.
+2. Integer division with remainder and 10 cents, if remainder is greater than 9. If not, skip.
+2. Integer division with remainder and 5 cents, if remainder is greater than 4. If not, skip.
+4. Remainder, if any, is the number of pennies.
+
+### (c)
+<!-- CREATE THE FUNCTION IN THE CODE CHUNK BELOW -->
+<!-- NAME THE FUNCTION AND ITS INPUTS EXACTLY AS STATED IN THE ASSIGNENT -->
+```{r Question 7c}
+get_minimum_coins <- function(cents) {
+  q <- cents %/% 25
+  d <- (cents - (25 * q)) %/% 10
+  n <- (cents - (25 * q) - (10 * d)) %/% 5
+  p <- (cents - (25 * q) - (10 * d) - (5 * n)) %/% 1
+  
+  q + d + n + p
+}
+```
+
+### (d)
+<!-- USE THE CODE CHUNK BELOW -->
+```{r Question 6d}
+
+get_minimum_coins(cents = 31)
+get_minimum_coins(cents = 48)
+get_minimum_coins(cents = 139)
+```
+
+(i) <!-- ENTER YOUR ANSWER TO THE RIGHT OF THIS OR BELOW -->
+3 coins
+(ii) <!-- ENTER YOUR ANSWER TO THE RIGHT OF THIS OR BELOW -->
+6 coins
+(iii) <!-- ENTER YOUR ANSWER TO THE RIGHT OF THIS OR BELOW -->
+10 coins
+
+### (e)
+<!-- USE THE CODE CHUNK BELOW -->
+```{r Question 6e}
+get_minimum_coins(99)
+```
+<!-- ENTER YOUR EXPLANATION BELOW -->
+It must be the number of cents that is not divisible by any of the coin amounts (5, 10, or 25). Each of the tens (10, 20, etc.) are divisible by 10, and anything above them would mean more coins. Therefore, I narrowed it down to 90-99. I excluded 100 since that would be simply 4 quarters. 90 coins would be 5 coins: 3 quarters, 1 dime, and 1 nickel. 91 coins would mean adding a penny (6), 92 another (7), 93 (8) up until 94 (9 coins). Similarly, 95 would be 5 coins, 96 - 6, 97- 7, 98 - 8 and 99 would be 9 coins. 99 is the number of cents less than 100 which requires the most coins.
+
+## Question 8
+<!-- THIS IS THE CODE GIVEN IN THE ASSIGNMENT -->
+```{r Question 8 Background, echo = TRUE}
+x <- 3
+y <- 4
+exp1 <- function() {
+  x^y
+}
+exp2 <- function(x = 2) {
+  x^y
+}
+exp_y <- function(x) {
+  function(y) {
+    x^y
+  }
+}
+```
+
+### (a)
+<!-- ENTER YOUR ANSWER BELOW -->
+Because in exp1(), the x value is the global x (3) since another is not defined, while in exp2() x is 2 since that is what x is defined as locally, or when the function is called. 
+
+### (b)
+<!-- ENTER YOUR ANSWER BELOW -->
+It does not throw an error because x and y have values, as defined in the top of the cell (the global values) and R is able to access objects in the global environment within the local environment. 
+
+### (c)
+<!-- USE THE CODE CHUNK BELOW -->
+```{r Question 8c}
+exp_y(15)(4)
+
+```
