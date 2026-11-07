@@ -1,21 +1,20 @@
 # Introduction to Programming (C++)
 
-Selected assignments from an introductory C++ programming course at UCLA.
+Coursework from an introductory C++ programming course at UCLA. All seven homework sets are represented below. Source files have been organized and reformatted for browsing; the solutions are from the original assignments and have not been comprehensively retested or revised.
 
-The course exercises covered functions, vectors, classes, and working with standard library containers. The assignments are presented as examples of undergraduate coursework, not as production libraries.
+| Assignment | Work included |
+| --- | --- |
+| [HW1](HW1/) | Integer arithmetic, change calculation, and elapsed-time calculations |
+| [HW2](HW2/) | Working with strings, number words, and polynomial expressions |
+| [HW3](HW3/) | Sorting, binary conversion, extrema, and Fibonacci sequences |
+| [HW4](HW4/) | Functions, vectors, sorting, and binary-vector addition |
+| [HW5](HW5/) | Fraction and complex-fraction classes and arithmetic |
+| [HW6](HW6/) | Custom string class and search operations |
+| [HW7](HW7/) | Modeling friendship relationships with classes, pointers, and sets |
 
-## Included assignment
+### Notes
 
-### Homework 7 — Modeling Friendship Relationships
-
-[View source files](HW7/)
-
-Implemented methods for a `Person` class to store and update friendship relationships using `std::unordered_set` of pointers to `Person` objects. Also implemented a function to remove one-sided friendship relationships.
-
-**Concepts:** C++ classes and methods, pointers, references, unordered sets, and object relationships.
-
-The original course test driver and development-environment files are not included. As with typical programming assignments, some interface declarations may originate from course-provided scaffolding.
-
-## Other coursework
-
-Earlier homework sets included functions and vector operations, fractions and complex-number arithmetic, and custom string operations. They are not currently published here while their implementations and any course-provided scaffolding are reviewed.
+- This is an archival record of introductory undergraduate coursework, not a polished or production-tested software project.
+- The original development environment was Xcode; generated files and duplicate entry points are not included.
+- Some assignments used course-supplied interfaces or testing scaffolding. In particular, HW6 refers to course-supplied `students-ignore*.h` files that have not been published here, so it is not standalone compilable.
+- Separate assignments should be built independently; do not compile all `.cpp` files in one command.
