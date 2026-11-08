@@ -1,6 +1,6 @@
 # Introduction to Programming (C++)
 
-Coursework from an introductory C++ programming course at UCLA. All seven homework sets are represented below. Source files have been organized and reformatted for browsing; the solutions are from the original assignments and have not been comprehensively retested or revised.
+Coursework from an introductory C++ programming course at UCLA. All seven homework sets are represented below. Source files are organized by assignment; the original solutions have not been comprehensively retested or revised.
 
 | Assignment | Work included |
 | --- | --- |
