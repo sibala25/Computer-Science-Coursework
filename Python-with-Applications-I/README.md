@@ -1,6 +1,6 @@
-# Python with Applications I A
+# Python with Applications I
 
-Undergraduate coursework from *Python with Applications I A* (UCLA). This folder preserves the original Jupyter notebook submissions alongside PDF exports, so readers can view both the assignment context and the submitted work.
+Undergraduate coursework from *Python with Applications I* (UCLA). This folder preserves the original Jupyter notebook submissions alongside PDF exports, so readers can view both the assignment context and the submitted work.
 
 | Homework | Topics |
 | --- | --- |
