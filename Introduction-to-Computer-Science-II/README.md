@@ -17,7 +17,3 @@ The archive only contains the parts listed above; gaps in numbering are not nece
 - **Project 2:** Set implementation and tests using dynamic memory management.
 - **Project 3:** Temple-based game with actors, game objects, and a game loop.
 - **Project 4:** Hash-table-based file revision algorithm. `revision.cpp` is taken from the original `finalproj4.zip` submission.
-
-## Notes
-
-Some assignments use course-provided headers or utilities. Separate test programs containing `main()` should be compiled individually. Project 4's test harness includes local macOS paths that may need adjustment.
