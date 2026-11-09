@@ -11,5 +11,3 @@ Selected written coursework in algorithm design and analysis, including pseudoco
 | HW5 | Dynamic programming, optimal game strategy, shortest paths, word segmentation | [View HW5](HW5/HW5.pdf) |
 
 These are archived coursework solutions, not reworked or independently validated. Some pages contain handwritten work and notes.
-
-Personal student identification numbers were redacted from public copies. The mathematical work was otherwise left as provided.
