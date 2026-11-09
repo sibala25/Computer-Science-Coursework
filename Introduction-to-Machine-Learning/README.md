@@ -8,5 +8,3 @@ Coursework from Introduction to Machine Learning, Winter 2025. Each problem set 
 | PS2 | Logistic regression, maximum likelihood estimation, polynomial regression, gradient descent | [PDF](PS2/ProblemSet2.pdf) | [Notebook](PS2/CS146_Winter2025_PS2.ipynb) |
 | PS3 | Support vector machines, kernels, and deep learning | [PDF](PS3/ProblemSet3.pdf) | [Notebook](PS3/CS146_Winter2025_PS3.ipynb) |
 | PS4 | Clustering, Gaussian mixture models, PCA | [PDF](PS4/ProblemSet4.pdf) | [Notebook](PS4/CS146_Winter2025_PS4.ipynb) |
-
-Some notebooks use course-provided templates, datasets, or utilities.
