@@ -10,7 +10,3 @@ Selected original C++ coursework from UCLA's Introduction to Computer Science I.
 | [HW4](HW4/) | Array operations |
 | [HW5](HW5/) | Plane flight and frequent-flyer account classes |
 | [HW6 — Beetle Game](HW6/) | Object-oriented C++ game with a beetle model, game logic, dice, drawing, and a test driver |
-
-## Notes
-
-HW6 uses instructor-provided starter files. HW5's original test driver may need adjustments to run.
