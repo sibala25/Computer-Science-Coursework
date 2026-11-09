@@ -11,7 +11,3 @@ Selected coursework from Introduction to Data Science, organized into homework a
 
 - **Project 1:** [PDF](Projects/Project1/M148_Project1.pdf) · [Notebook](Projects/Project1/M148_Project1.ipynb) — exploration, preprocessing, modeling, and evaluation using real-world data
 - **Project 2:** [PDF](Projects/Project2/M148_Project2.pdf) · [Notebook](Projects/Project2/M148_Project2.ipynb) — comparative classification methods on a heart-disease dataset
-
-## Notes
-
-Some notebooks use course-provided templates and datasets.
