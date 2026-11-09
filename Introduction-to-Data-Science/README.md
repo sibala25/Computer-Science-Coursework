@@ -14,6 +14,4 @@ Selected coursework from Introduction to Data Science, organized into homework a
 
 ## Notes
 
-- Notebooks originated from course-provided templates, with student implementations and outputs. Course scaffolding remains intact.
-- Local datasets and course dependencies may be required to rerun notebooks.
-- Student-identifying ID numbers were removed from the public copies; assignment solutions were not intentionally revised.
+Some notebooks use course-provided templates and datasets.

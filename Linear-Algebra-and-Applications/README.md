@@ -9,4 +9,4 @@ Selected handwritten homework from UCLA's Linear Algebra course.
 - [HW3](HW3.pdf) — handwritten solutions
 - [HW4](HW4.pdf) — handwritten solutions
 
-The scanned PDFs preserve the original work and notation. They are archival coursework rather than polished lecture notes or independently verified solutions.
+The PDFs contain handwritten solutions.

@@ -13,7 +13,4 @@ Selected original C++ coursework from UCLA's Introduction to Computer Science I.
 
 ## Notes
 
-- Source code is from the original course submissions, apart from redaction of the student ID. Formatting and implementation logic were not otherwise modified.
-- HW6 was completed using instructor-provided starter files. The repository preserves the available course project files and does not claim every component was written from scratch.
-- Compiled binaries, duplicate copies, and Xcode project metadata are excluded.
-- The code is archival coursework and has not been independently rebuilt or fully tested here. HW5's original driver may need corrections to run.
+HW6 uses instructor-provided starter files. HW5's original test driver may need adjustments to run.

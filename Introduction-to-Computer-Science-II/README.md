@@ -1,6 +1,6 @@
 # Introduction to Computer Science II (CS32)
 
-Selected UCLA CS32 coursework, organized into homework and programming projects. Original code and formatting are preserved. This is an archive of coursework, not a claim that every file compiles independently or that each program is production-ready.
+Selected UCLA CS32 coursework, organized into homework and programming projects.
 
 ## Homework
 
@@ -20,8 +20,4 @@ The archive only contains the parts listed above; gaps in numbering are not nece
 
 ## Notes
 
-- Source code and original formatting are retained without cleanup or silent logic changes. Some headers and utilities may be course-provided scaffolding.
-- The source files use their original filenames; separate test programs containing `main()` must be built independently.
-- Project 4's source contains absolute macOS paths in its example test harness. Those paths reflect the original development environment and need to be changed locally to run those tests.
-- Large Project 4 text fixtures and the course-provided Project 3 skeleton are excluded from this public package pending redistribution review.
-- Xcode project files, compiled programs, duplicated archive entries, and generated macOS metadata are excluded.
+Some assignments use course-provided headers or utilities. Separate test programs containing `main()` should be compiled individually. Project 4's test harness includes local macOS paths that may need adjustment.

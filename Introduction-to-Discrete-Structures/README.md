@@ -15,7 +15,3 @@ Selected handwritten homework from UCLA's Introduction to Discrete Structures co
 | HW7 | [View HW7](HW7.pdf) |
 | HW8 | [View HW8](HW8.pdf) |
 | HW9 | [View HW9](HW9.pdf) |
-
-## Notes
-
-These are scans of original coursework. Some handwriting is faint; zoom in to read the mathematics. Solutions have not been reworked or independently graded for this repository.

@@ -14,4 +14,4 @@ Undergraduate coursework in artificial intelligence, including programming assig
 | Homework 8 | [HW8.pdf](HW8/HW8.pdf) |
 | Homework 9 | [HW9.pdf](HW9/HW9.pdf) |
 
-Assignments are preserved as submitted, except for standardized filenames, removal of student ID markings, and image compression of scanned PDF pages (HW6, HW7, HW9) for easier GitHub uploads. Some notebooks may depend on course-provided code or datasets.
+Some notebooks use course-provided code or datasets.

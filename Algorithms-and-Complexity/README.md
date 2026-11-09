@@ -10,4 +10,4 @@ Selected written coursework in algorithm design and analysis, including pseudoco
 | HW4 | Recurrence analysis, binary search, divide-and-conquer | [View HW4](HW4/HW4.pdf) |
 | HW5 | Dynamic programming, optimal game strategy, shortest paths, word segmentation | [View HW5](HW5/HW5.pdf) |
 
-These are archived coursework solutions, not reworked or independently validated. Some pages contain handwritten work and notes.
+The solutions include handwritten work and notes.

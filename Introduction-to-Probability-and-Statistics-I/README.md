@@ -16,5 +16,3 @@ Undergraduate probability coursework from UCLA, presented as original handwritte
 | HW8 | [View PDF](HW8.pdf) |
 
 The assignments include probability calculations, discrete and continuous random variables, distributions, expectation, and variance.
-
-These files are archived coursework, not independently verified solutions. Some pencil markings may be faint when viewed at normal zoom.

@@ -11,4 +11,4 @@ UCLA Stats 20 coursework (Fall 2023), organized by homework assignment. Each fol
 | [HW5](HW5/) | [R Markdown](HW5/HW5.Rmd) | [PDF](HW5/HW5.pdf) |
 | [HW6](HW6/) | [R Markdown](HW6/HW6.Rmd) | [PDF](HW6/HW6.pdf) |
 
-The R Markdown files retain the submitted code and responses. Student ID details were removed for public sharing; PDFs were generated from the corresponding HTML submissions. Some assignment wording and templates originated from the course.
+The R Markdown files contain the submitted code and responses, with PDFs rendered from the corresponding HTML submissions. Some prompts and templates were supplied by the course.

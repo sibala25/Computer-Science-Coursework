@@ -12,6 +12,6 @@ Undergraduate coursework from *Python with Applications I* (UCLA). This folder p
 | [HW6](HW6/) | Data analysis, Gapminder, and visualization |
 | [HW7](HW7/) | Equity and algorithmic bias in data analysis |
 
-Each homework folder contains a notebook (`.ipynb`) and a PDF export of the submitted assignment. The notebooks and PDFs are archival student work, not updated or independently retested software. Some embedded assignment prompts and starter cells were supplied by course staff. Share the PDFs publicly only if course sharing rules permit it.
+Each homework folder contains a Jupyter notebook and its PDF export. Some prompts and starter cells were provided by course staff.
 
-**Final project — Palmer Penguins classification:** [Original Jupyter notebook](Final-Project/12_2022_PalmersPenguins.ipynb). A collaborative classification analysis using the Palmer Penguins dataset. My work included the multinomial logistic regression model and Figure 3, with shared contributions to data preparation and writing. The notebook is preserved as originally submitted.
+**Final project — Palmer Penguins classification:** [Original Jupyter notebook](Final-Project/12_2022_PalmersPenguins.ipynb). A collaborative classification analysis using the Palmer Penguins dataset. My work included the multinomial logistic regression model and Figure 3, with shared contributions to data preparation and writing.

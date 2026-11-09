@@ -9,4 +9,4 @@ Coursework from Introduction to Machine Learning, Winter 2025. Each problem set 
 | PS3 | Support vector machines, kernels, and deep learning | [PDF](PS3/ProblemSet3.pdf) | [Notebook](PS3/CS146_Winter2025_PS3.ipynb) |
 | PS4 | Clustering, Gaussian mixture models, PCA | [PDF](PS4/ProblemSet4.pdf) | [Notebook](PS4/CS146_Winter2025_PS4.ipynb) |
 
-The notebooks are original coursework submissions based partly on course-provided templates. They may rely on external datasets, utility files, and Google Colab paths and have not been independently validated as standalone programs.
+Some notebooks use course-provided templates, datasets, or utilities.

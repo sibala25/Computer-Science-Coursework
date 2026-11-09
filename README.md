@@ -41,6 +41,4 @@ Each course has its own folder containing selected assignments and a README desc
 
 ## Notes
 
-This repository is an archive of undergraduate coursework rather than a collection of production-ready applications. Some assignments use instructor-provided starter code, datasets, or dependencies and may not run independently without the original course environment.
-
-Files are preserved primarily to demonstrate academic work and technical preparation. Individual course READMEs provide additional details about the assignments and any relevant limitations.
+Some assignments use instructor-provided starter code or datasets.

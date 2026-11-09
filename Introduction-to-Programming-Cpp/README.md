@@ -1,6 +1,6 @@
 # Introduction to Programming (C++)
 
-Coursework from an introductory C++ programming course at UCLA. All seven homework sets are represented below. Source files are organized by assignment; the original solutions have not been comprehensively retested or revised.
+Coursework from an introductory C++ programming course at UCLA. All seven homework sets are organized by assignment.
 
 | Assignment | Work included |
 | --- | --- |
@@ -14,7 +14,4 @@ Coursework from an introductory C++ programming course at UCLA. All seven homewo
 
 ### Notes
 
-- This is an archival record of introductory undergraduate coursework, not a polished or production-tested software project.
-- The original development environment was Xcode; generated files and duplicate entry points are not included.
-- Some assignments used course-supplied interfaces or testing scaffolding. In particular, HW6 refers to course-supplied `students-ignore*.h` files that have not been published here, so it is not standalone compilable.
-- Separate assignments should be built independently; do not compile all `.cpp` files in one command.
+Some assignments use course-supplied interfaces or testing files. HW6 refers to `students-ignore*.h` headers that are not included here. Compile each assignment separately.
